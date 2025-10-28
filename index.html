@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="" crossorigin="anonymous">
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="h-screen"> 
+    <header class="bg-green-400 px-10 sticky top-0 w-full">
+        <nav class="flex justify-between items-center">
+            <ul class="flex items-center gap-2">
+                <img class="h-16" src="/images/money_13680737.png" alt="">
+                <h2 class="font-bold text-2xl ">Baztami</h2>
+            </ul>
+            <button class=" text-xl rounded-3xl"> <i class="fa-solid fa-circle-half-stroke"></i> </button>
+        </nav>
+    </header>
+
+    <main class="h-screen border-2 border-black  ">
+        <div class="flex items-center flex-col border-2 gap-7 py-9"> <!--  !!!!!!  -->
+        <h1 class="text-xl">Hello, Mr Mo ! </h1>
+
+        <h1 class="text-3xl">mon budget</h1>
+        <h1 class="text-4xl font-bold">Solde net: 0 €</h1>
+        </div>
+        <div class="flex justify-around text-2xl">
+            <h1>Total revenus: 0 €</h1>
+            <h1>Total Dépenses: 0 €</h1>
+        </div>
+        
+        <button class="text-4xl border-2  bottom-16 right-16 fixed z-50"><i class="fa-solid fa-plus"></i></button>
+
+    </main>  
+    
     
 </body>
 </html>
