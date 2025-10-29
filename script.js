@@ -18,3 +18,19 @@ btn.addEventListener("click" , () => {
 
 
 
+const plus_btn = document.getElementById("open") ;
+const pop = document.getElementById("popup");
+const contrast = document.getElementById("mode") ;
+plus_btn.addEventListener("click" ,() =>{
+  pop.style.visibility = "visible"
+  
+  contrast.style.background = "rgba(0, 0, 0, 0.3)";
+}) ;
+
+
+const cancel = document.getElementById("close") ;
+
+  cancel.addEventListener("click" , ()=> {
+  pop.style.visibility = "hidden" ;
+  contrast.style.background = "";
+}) ;
