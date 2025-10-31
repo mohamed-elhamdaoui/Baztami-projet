@@ -40,7 +40,13 @@ cancel.addEventListener("click", () => {
 
 
 
+
+
+let cntr = 0;
+
+
 const save = document.getElementById("save");
+
 const desc = document.getElementById("description")
 const montant = document.getElementById("montant")
 const type = document.getElementById("type")
@@ -49,6 +55,9 @@ const date = document.getElementById("date")
 
 // card created by form
 const cardsContainer = document.getElementById("cards-container")
+
+
+let arr = [] ;
 save.addEventListener("click", () => {
   let description = desc.value;
   let price = montant.value
@@ -98,9 +107,28 @@ console.log
 
 
 
+
+
+
+
+let obj = { description : description ,
+            montant : price , 
+            type : choix , 
+            date : datevalue
+        } ;
+
+        arr.push(obj) ;
+
+        localStorage.setItem("transaction" , JSON.stringify(arr))
+ 
+  
+  
+
   pop.style.visibility = "hidden";
   contrast.style.background = ""
 });
+
+console.log(localStorage.getItem("transaction"))
 
 
 let balance = 0 ;
@@ -138,3 +166,11 @@ save.addEventListener("click" , ()=> {
 
 // console.log(a == b); // Erreur détectée : comparaison entre number et string
 // console.log(a == c); // Erreur détectée : comparaison entre number et array
+
+
+
+
+
+
+
+
