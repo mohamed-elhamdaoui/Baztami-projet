@@ -19,45 +19,51 @@
         </nav>
     </header>
 
-    <main id="mode" class="h-screen ">
+    <main id="mode" class="h-screen transition-opacity duration-300 ">
         <div class="flex items-center flex-col gap-5 py-7"> <!--  !!!!!!  -->
         <h1 class="text-xl">Hello, Mr Mo ! </h1>
 
         <h1 class="text-3xl">mon budget</h1>
-        <h1 class="text-4xl font-bold">Solde net: 0 €</h1>
+        <h1 class="text-4xl font-bold">Solde net: <span class="text-green-500"> <span id="solde">0</span>  €</span> </h1>
         </div>
-        <div class="flex justify-around text-2xl px-16">
-            <h1>Total revenus: <span>0 €</span></h1>
-            <h1>Total Dépenses: 0 €</h1>
+        <div class="flex justify-around font-bold text-2xl px-16">
+            <h1>Total revenus: <span class="text-green-500 font-bold"> <span id="revenu">0</span> €</span></h1>
+            <h1>Total Dépenses: <span class="text-red-500 font-bold"> <span id="depense">0</span> €</span> </h1>
         </div>
         
-        <button id="open" class="text-4xl rounded-3xl  bottom-16 right-16 fixed z-50"><i class="fa-solid fa-plus"></i></button>
+        <button id="open"  class="text-4xl rounded-3xl  bottom-16 right-16 fixed z-50"><i class="fa-solid fa-plus"></i></button>
 
 
-        <div class="border-2 border-black">
-            <h1 class="capitalize  p-7 text-xl font-bold">mes transactions :</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, molestiae aut quos commodi, magni voluptatem sed culpa exercitationem corporis necessitatibus voluptate et nulla repellendus iusto. In quam tempore tenetur asperiores?</p>
+        <div class=" m-7 h-fit p-5">
+            <h1 class="capitalize  pl-7 text-xl font-bold p-3">mes transactions :</h1>  
+            <div class=" h-[30%] grid grid-cols-3 row-3 gap-2" id="cards-container"> 
+                 
+                
+
+
+
+            </div>  
         </div>
 
-        <div id="popup" class="border-2 border-black w-[40%] h-fit bg-white  fixed left-0 right-0 mx-auto top-1/2 -translate-y-1/2 z-50 invisible rounded-md">
+        <div id="popup" class="shadow-lg border-2 border-black w-[40%] h-fit bg-white  fixed left-0 right-0 mx-auto top-1/2 -translate-y-1/2 z-50 invisible rounded-md">
             <h1 class="text-2xl text-center p-3">Ajoute Transiction</h1>
             <div class="flex flex-wrap justify-around gap-y-4 ">
             
-            <input class="border-2 w-[35%] rounded-lg  p-2" type="text" placeholder="Description">
-            <input class="border-2 w-[35%] rounded-lg  p-2" type="number" placeholder="Montant (€)">
+            <input id="description" class="border-2 w-[35%] rounded-lg  p-2" type="text" placeholder="Description">
+            <input id="montant" class="border-2 w-[35%] rounded-lg  p-2" type="number" placeholder="Montant (€)">
             
             
-            <select class="border-2 w-[35%] rounded-lg p-2" name="" id="">
-                <option value="">revenu</option>
-                <option value="">despose</option>
+            <select  class="border-2 w-[35%] rounded-lg p-2" name="" id="type">
+                <option value="revenu" >revenu</option>
+                <option value="despose" >despose</option>
             </select>
-            <input class="border-2 w-[35%] rounded-lg p-2" type="date" placeholder="date">
+            <input id="date" class="border-2 w-[35%] rounded-lg p-2" type="date" placeholder="date">
             
             
             </div>
             <div class="p-3 flex justify-center gap-6">
                 <button id="close" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Annuler</button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Sauvgarder</button>
+                <button id="save" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Sauvgarder</button>
             </div>
         </div>
 

@@ -1,0 +1,13 @@
+<div class="card border border-2 border-black w-full h-fit bg-selected? red:green-300">
+    <h1>hello</h1>
+    <button>mother fucker</button>
+</div>
+
+
+
+
+<div class="card border border-2 border-black w-full h-fit bg-red-300">
+    <h1>hello</h1>
+</div>
+
+checked? red : green;
