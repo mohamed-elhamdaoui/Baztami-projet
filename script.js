@@ -234,7 +234,7 @@ function deletEelem(id) {
   var data = JSON.parse(localStorage.getItem("transaction"));
   let newArray = deleteElement(data, id)
   localStorage.setItem("transaction", JSON.stringify(newArray))
-  window.location.reload()
+  
 }
 
 function findElem(data, id) {
@@ -276,9 +276,9 @@ let depense = document.getElementById("depense");
 save.addEventListener("click", () => {
 
   if (type.value == "revenu") {
-    income = income + Number(montant.value);
+    income = income + parseInt(montant.value);
   } else {
-    expenses = expenses + Number(montant.value);
+    expenses = expenses + parseInt(montant.value);
   }
   balance = income - expenses
   console.log(balance)
