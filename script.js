@@ -234,7 +234,7 @@ function deletEelem(id) {
   var data = JSON.parse(localStorage.getItem("transaction"));
   let newArray = deleteElement(data, id)
   localStorage.setItem("transaction", JSON.stringify(newArray))
-  
+ location.reload()
 }
 
 function findElem(data, id) {
