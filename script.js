@@ -101,6 +101,10 @@ console.log
   // field3.innerHTML = choix
   // card.appendChild(field3)
 
+
+
+
+  
   // let field4 = document.createElement("h1")
   // field4.innerHTML = Date
   // card.appendChild(field4)
