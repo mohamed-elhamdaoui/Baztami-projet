@@ -15,7 +15,7 @@ btn.addEventListener("click", () => {
   }
 });
 
-var id = Date.now();
+
 
 
 const plus_btn = document.getElementById("open");
@@ -59,6 +59,7 @@ const cardsContainer = document.getElementById("cards-container")
 
 
 save.addEventListener("click", () => {
+  var id = Date.now();
   let description = desc.value;
   let price = montant.value
   let choix = type.value
@@ -154,10 +155,21 @@ console.log()
 
 
 var t = JSON.parse(localStorage.getItem("transaction"));
+// let soldeee = document.getElementById("solde");
+// let sum = 0;
+// console.log(t.forEach(elem => {
+//   if(elem.type === "revenu") {
+//     console.log(elem.montant) ;
+//     sum += parseInt(elem.montant) 
+//   }
+// }))
+// soldeee.textContent = sum;
+
+// solde.innerText = montant ;
 
 t.forEach(data => {
 
-  const card = `<div id="${id}" class=" shadow-md rounded-2xl text-gray-800 w-full h-fit  hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg bg-${data.type == "revenu" ? "green" : "red"}-400">
+  const card = `<div id="${data.id}" class=" shadow-md rounded-2xl text-gray-800 w-full h-fit  hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg bg-${data.type == "revenu" ? "green" : "red"}-400">
     <h1 class="text-lg font-semibold mb-2 capitalize  ">${data.description}</h1>
     <p class="text-xl font-bold">${data.montant} €</p>
     
@@ -234,7 +246,7 @@ function deletEelem(id) {
   var data = JSON.parse(localStorage.getItem("transaction"));
   let newArray = deleteElement(data, id)
   localStorage.setItem("transaction", JSON.stringify(newArray))
- location.reload()
+  location.reload()
 }
 
 function findElem(data, id) {
@@ -264,30 +276,28 @@ function deleteElement(data, id) {
 
 
 
-let balance = 0;
-let income = 0;
-let expenses = 0;
+// let balance = 0;
+// let income = 0;
+// let expenses = 0;
 
 
-let solde = document.getElementById("solde");
-let revenue = document.getElementById("revenu");
-let depense = document.getElementById("depense");
 
-save.addEventListener("click", () => {
 
-  if (type.value == "revenu") {
-    income = income + parseInt(montant.value);
-  } else {
-    expenses = expenses + parseInt(montant.value);
-  }
-  balance = income - expenses
-  console.log(balance)
+// save.addEventListener("click", () => {
 
-  solde.innerHTML = balance
-  revenue.innerHTML = income
-  depense.innerHTML = expenses
+//   if (type.value == "revenu") {
+//     income = income + parseInt(montant.value);
+//   } else {
+//     expenses = expenses + parseInt(montant.value);
+//   }
+//   balance = income - expenses
+//   console.log(balance)
 
-})
+//   solde.innerHTML = balance
+//   revenue.innerHTML = income
+//   depense.innerHTML = expenses
+
+// })
 
 
 // solde.innerHTML = price
@@ -300,11 +310,31 @@ save.addEventListener("click", () => {
 // console.log(a == b); // Erreur détectée : comparaison entre number et string
 // console.log(a == c); // Erreur détectée : comparaison entre number et array
 
+let data = JSON.parse(localStorage.getItem("transaction"));
+console.log(data.length)
 
+let solde = document.getElementById("solde");
+// solde.innerHTML = '<p>hello</p>'
+let revenue = document.getElementById("revenu");
+let depense = document.getElementById("depense");
 
+let sum = 0
+let sumDespo = 0
+data.forEach(elem => {
+  if (elem.type === "revenu") {
+    console.log(elem.montant)
 
+    sum += Number(elem.montant)
+  } else {
+sumDespo += Number(elem.montant) 
+  }
 
+});
+console.log(sumDespo)
 
+revenue.textContent = sum
+depense.textContent = sumDespo
 
+solde.textContent = sum - sumDespo
 
 
