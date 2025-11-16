@@ -1,78 +1,56 @@
 # 💰 BZTAMI
+
 **Gérez vos revenus et dépenses facilement — votre budget, sous contrôle.**
 
-🌐 [Visit Website](https://profound-kheer-5ef8bd.netlify.app/)  
-*(or the official domain: [bztamiapp.netlify.app](https://bztamiapp.netlify.app/))*
+🌐 [Visitez le site](https://profound-kheer-5ef8bd.netlify.app/)
 
 ---
 
-## 🧾 Overview
-**BZTAMI** is a simple and intuitive web application for managing your personal finances.  
-It allows users to track **revenues** and **expenses**, visualize totals in real time, and maintain control over their financial situation — all in one clean, user-friendly dashboard.
+## 🧾 Aperçu
+
+**BZTAMI** est une application web simple et intuitive qui permet de suivre vos **revenus** et **dépenses** au quotidien.  
+Elle offre une interface claire et moderne pour mieux gérer votre argent et garder un œil sur votre solde à tout moment.
 
 ---
 
-## ✨ Features
-- ➕ **Add revenues or expenses** with title, description, amount, and date  
-- 📊 **Automatic total calculation** (revenues – expenses)  
-- 💾 **Local storage persistence** — your data stays even after refresh  
-- 🗑️ **Delete or update entries** easily  
-- ⚙️ **Smart validation alerts** using **SweetAlert** for confirmations and warnings  
-- 🎨 **Modern, minimal, and colorful UI** for clear readability  
-- 📱 **Fully responsive design** — optimized for both mobile and desktop  
-- 🌗 **Automatic dark/light mode** for better comfort  
+## ⚙️ Fonctionnalités principales
+
+- ➕ Ajouter un **revenu** ou une **dépense** avec description, montant, type et date.  
+- 📅 Affichage de toutes les transactions sous forme de **cartes colorées** :
+  - 🟢 **Vert** pour les revenus  
+  - 🔴 **Rouge** pour les dépenses  
+- 📊 **Calcul automatique** du solde total.  
+- 🌓 **Mode sombre / clair automatique** selon les préférences du système.  
+- 💾 Les données sont **sauvées dans le LocalStorage** — vos transactions restent visibles même après rechargement de la page.  
+- 📱 Interface **responsive** (mobile et desktop).  
 
 ---
 
-## 🛠️ Technologies Used
-- **HTML5**  
-- **CSS3** *(with clean custom styles or Tailwind CSS)*  
-- **Vanilla JavaScript (ES6)**  
-- **SweetAlert2** *(for modal dialogs)*  
-- **LocalStorage API** *(for offline data persistence)*  
-- **Netlify** *(for hosting and deployment)*  
+## 🛠️ Stack utilisée
+
+- **Langage :** JavaScript (Vanilla JS)  
+- **Style :** Tailwind CSS  
+- **Stockage :** LocalStorage  
+- **Hébergement :** Netlify  
 
 ---
 
-## 🧩 Project Structure
-```
-📦 BZTAMI
- ┣ 📂 assets/           # images, icons, etc.
- ┣ 📂 css/              # stylesheets
- ┣ 📂 js/               # main logic scripts
- ┣ 📜 index.html        # main entry
- ┣ 📜 README.md         # project documentation
- ┗ 📜 manifest.json     # optional (PWA support)
-```
+## 🚀 Installation locale
 
----
-
-## 🚀 Getting Started
-
-### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/BZTAMI.git
-cd BZTAMI
-```
+# Clone le projet
+git clone https://github.com/mohamed-elhamdaoui/Baztami-projet.git
 
-### 2. Open locally
-Simply open `index.html` in your browser, or use **Live Server** in VS Code.
+# Accède au dossier
+cd Baztami-projet
 
-### 3. (Optional) Deploy to Netlify
-- Go to [Netlify](https://www.netlify.com/)
-- Drag & drop your folder or connect your GitHub repo  
-- You’re live in seconds 🚀
+# Ouvre simplement le fichier index.html dans ton navigateur
 
----
-
-## 📸 Preview
-![BZTAMI Dashboard Preview](https://user-images.githubusercontent.com/example/preview.png)
-
----
 
 ## 🧠 Author
-👨‍💻 **Mohammed Elhamdaoui**  
-📫 [GitHub](https://github.com/yourusername) | [LinkedIn](https://linkedin.com/in/yourusername)
+👨‍💻 Mohammed Elhamdaoui
+Créateur du projet BZTAMI
+📧 GitHub Profile
 
 ---
 
