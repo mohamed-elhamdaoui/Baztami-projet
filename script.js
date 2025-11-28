@@ -1,7 +1,13 @@
+const save = document.getElementById("save");
+const desc = document.getElementById("description")
+const montant = document.getElementById("montant")
+const type = document.getElementById("type")
+const date = document.getElementById("date")
+const cardsContainer = document.getElementById("cards-container")
 const btn = document.getElementById("snap");
 const swap = document.getElementById("mode");
 let dark = false;
-
+let overlay = document.getElementById("overlay");
 btn.addEventListener("click", () => {
   if (!dark) {
     swap.style.background = "linear-gradient(to bottom, #2C2A28, #0E0C0B)";
@@ -15,55 +21,23 @@ btn.addEventListener("click", () => {
   }
 });
 
-
-
-
-const plus_btn = document.getElementById("open");
-const pop = document.getElementById("popup");
-const contrast = document.getElementById("mode");
-plus_btn.addEventListener("click", () => {
-  pop.style.visibility = "visible"
-
-  contrast.style.background = "rgba(0, 0, 0, 0.3)";
-
-  contrast.style.backdropFilter = "blur(10px)";
-
-});
-let overlay = document.getElementById("overlay");
+// contrast.style.background = "rgba(0, 0, 0, 0.3)";
 
 function opnPopup() {
   overlay.classList.remove("hidden");
-  overlay.classList.add("bg-black/30")
-  overlay.classList.add("backdrop-blur-sm")
   document.body.classList.add("overflow-hidden")
 
 }
 
-
-const cancel = document.getElementById("close");
-
-cancel.addEventListener("click", () => {
-  pop.style.visibility = "hidden";
-  contrast.style.background = "";
-});
-
-
-
-
+function closePopup() {
+  overlay.classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
+}
 
 let cntr = 0;
 
 
-const save = document.getElementById("save");
 
-const desc = document.getElementById("description")
-const montant = document.getElementById("montant")
-const type = document.getElementById("type")
-// console.log(type)
-const date = document.getElementById("date")
-
-// card created by form
-const cardsContainer = document.getElementById("cards-container")
 
 
 
