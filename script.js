@@ -29,6 +29,15 @@ plus_btn.addEventListener("click", () => {
   contrast.style.backdropFilter = "blur(10px)";
 
 });
+let overlay = document.getElementById("overlay");
+
+function opnPopup() {
+  overlay.classList.remove("hidden");
+  overlay.classList.add("bg-black/30")
+  overlay.classList.add("backdrop-blur-sm")
+  document.body.classList.add("overflow-hidden")
+
+}
 
 
 const cancel = document.getElementById("close");
@@ -326,7 +335,7 @@ data.forEach(elem => {
 
     sum += Number(elem.montant)
   } else {
-sumDespo += Number(elem.montant) 
+    sumDespo += Number(elem.montant)
   }
 
 });
