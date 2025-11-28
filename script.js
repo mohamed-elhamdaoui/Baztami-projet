@@ -26,7 +26,10 @@ btn.addEventListener("click", () => {
 function opnPopup() {
   overlay.classList.remove("hidden");
   document.body.classList.add("overflow-hidden")
-
+  desc.value = "";
+  montant.value = "";
+  type.value = "revenu";
+  date.value = "";
 }
 
 function closePopup() {
@@ -34,20 +37,12 @@ function closePopup() {
   document.body.classList.remove("overflow-hidden");
 }
 
-let cntr = 0;
-
-
-
-
-
-
-save.addEventListener("click", () => {
-  var id = Date.now();
+function saveTransaction() {
+  let id = Date.now();
   let description = desc.value;
   let price = montant.value
   let choix = type.value
   let datevalue = date.value
-  console.log(type.value)
 
   const red = `<div id="${id}" class=" shadow-md rounded-2xl text-gray-800 w-full h-fit  hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg bg-${choix == "revenu" ? "green" : "red"}-400" >
     <h1 class="text-lg font-semibold mb-2 capitalize  ">${description}</h1>
@@ -60,79 +55,22 @@ save.addEventListener("click", () => {
     </div>
 </div>`;
 
-  console.log(choix)
-  // let card = document.createElement("div")
-
-
   cardsContainer.insertAdjacentHTML("afterbegin", red);
-  // if (choix == "revenu") {
-  //   document.getElementById("looz").classList.add("bg-green-400")
-  // }
-  // else {
-  //   document.getElementById("looz").classList.add("bg-red-400")
-  // }
 
-  // card.classList = 'bg-green-500 w-50 h-fit py-3 w-[40%]'
-  // let h1 = document.createElement("h1")
-  // h1.innerHTML= description
-  // card.appendChild(h1)
-
-  // let field2 = document.createElement("h1")
-  // field2.innerHTML = price
-  // card.appendChild(field2)
-
-  // let field3 =document.createElement("h1")
-  // field3.innerHTML = choix
-  // card.appendChild(field3)
-
-
-
-
-
-  // let field4 = document.createElement("h1")
-  // field4.innerHTML = Date
-  // card.appendChild(field4)
-
-
-
-  let arr = localStorage.getItem("transaction");
-  if (arr === null) {
-    arr = [];
-  } else {
-    arr = JSON.parse(arr);
-  }
-
-
-
-
-  let obj = {
+  let transactions = JSON.parse(localStorage.getItem("transactions")) || []
+  let transaction = {
+    id: id,
     description: description,
-    montant: price,
+    price: price,
     type: choix,
     date: datevalue,
-    id: id
   };
+  transactions.push(transaction);
+  localStorage.setItem("transactions", JSON.stringify(transactions))
 
-  arr.push(obj);
+  closePopup()
+}
 
-
-
-  localStorage.setItem("transaction", JSON.stringify(arr));
-
-  // let wesh = JSON.parse("transaction")
-
-
-
-
-  pop.style.visibility = "hidden";
-  contrast.style.background = ""
-});
-
-
-
-
-
-console.log()
 
 
 
