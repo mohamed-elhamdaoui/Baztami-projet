@@ -8,6 +8,7 @@ const btn = document.getElementById("snap");
 const swap = document.getElementById("mode");
 let dark = false;
 let overlay = document.getElementById("overlay");
+let popup = document.getElementById("popup");
 
 
 let montantUpdt = document.getElementById("montant-updt");
@@ -143,7 +144,6 @@ function deleteTransaction(id) {
   statistic()
 }
 
-let popup = document.getElementById("popup");
 // let popupUpdt = document.getElementById("popup-updt")
 overlay.addEventListener("click", (e) => {
   // console.log(e.target)
@@ -324,7 +324,8 @@ cancelUpdt.addEventListener("click", () => {
 
 
 function statistic() {
-  let data = JSON.parse(localStorage.getItem("transactions"));
+  let data = JSON.parse(localStorage.getItem("transactions")) || [];
+  console.log(data)
   let sum = 0
   let sumDespo = 0
   data.forEach(elem => {
